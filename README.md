@@ -188,7 +188,7 @@ const { actions, reducer } = generate({
     setName: customAction(
         type => (firstName, lastName) => ({ type, payload: firstName + " " + lastName }),
         action => state => ({ ...state, name: action.payload })
-    )
+    ),
     curriedSetName: customAction(
         type => firstName => lastName => ({ type, payload: firstName + " " + lastName }),
         action => state => ({ ...state, name: action.payload })
@@ -256,7 +256,7 @@ const Component1 = () => {
 
     return (
         <div>
-            <h1>Pick a Color</h1>
+            <div style={{ height: 50, backgroundColor: state.color }} />
             <button onClick={() => setColor("red")}>Red</button>
             <button onClick={() => setColor("blue")}>Blue</button>
             <button onClick={() => setColor("green")}>Green</button>
@@ -271,7 +271,7 @@ const Component2 = () => {
 
     return (
         <div>
-            <h1>Pick a Color</h1>
+            <div style={{ height: 50, backgroundColor: state.color }} />
             <button onClick={setColor("red")}>Red</button>
             <button onClick={setColor("blue")}>Blue</button>
             <button onClick={setColor("green")}>Green</button>
